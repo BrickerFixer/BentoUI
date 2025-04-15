@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bento Grid Layout</title>
+  <link rel="stylesheet" href="css/layouts.css">
+  
+  <link rel="stylesheet" href="css/uikit/kit.css">
+  <link rel="stylesheet" href="css/uikit/suggest2.css">
+  <link rel="stylesheet" href="css/bento.css">
+</head>
+<body class="b-page b-page-layout__rows b-page_theme_head_light b-page_theme_content_light b-page_noskin css3-transition-off">
+  <div class="layout header header_table_close">
+    <div class="b-line b-line_header">
+        <div class="header__main">
+            <div class="layout__col">
+                <div class="personal">
+                    <div class="personal__item ">
+                        <img src="css/placeholder-logo.png" class="personal__item-icon personal__item-icon_height_56"/>
+                    </div>
+                </div>
+            </div>
+            <!-- Update header__nav: assign wrnch popup -->
+            <div class="layout__col layout__col_size_5 header__nav">
+              <div class="controls header__action-extended">
+                <button id="edit-toggle">Edit Layout</button>
+                <button id="add-block" style="display: none;">Add Block</button>
+              </div>
+                <a class="header__action header__action_type_wrch i-bem" onclick="return {'header__action':{'releaseByDocumentScroll':false}}">
+                  <i class="header__action-i"></i>
+                </a>
+                <a class="header__action header__action_type_srv header__action_behaviour_shy i-bem" onclick="return {'header__action':{}}">
+                    <i class="header__action-i"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div class="b-line">
+    <div class="bento-container">
+      <!-- News Block -->
+      <div class="bento-block size-3x2" data-type="news">
+        <h3>News</h3>
+        <div>Latest news content here</div>
+        <button class="remove-btn">×</button>
+      </div>
+      
+      <!-- Logo Block -->
+      <div class="bento-block size-1x1" data-type="logo">
+        <div class="b-logo">
+              <div class="b-logo__image_bg"></div>
+        </div>
+        <button class="remove-btn">×</button>
+      </div>
+      
+      <!-- Search Block -->
+      <div class="bento-block size-2x1" data-type="search">
+        <div class="arrow">
+            <form class="search suggest2-form suggest2-counter search_suggest_yes i-bem"><input type="hidden" name="lr" value="90" />
+              <table class="search__table suggest2-form__node">
+                <tr class="search__row">
+                  <td class="search__cell search__input"><span class="input suggest2-form__input input_size_m input_theme_normal input_ahead_yes input_keyboard_yes i-bem" onclick="return {'input':{'ajaxKey':'search__input','autoFocus':true}}"><span class="input__box"><input class="input__control input__input" tabindex="1" autocomplete="yes" id="text" maxlength="400" name="text" />
+                  </td>
+                  <td class="search__cell search__button"><button class="search-button button suggest2-form__button button_size_m i-bem" role="button" tabindex="2" type="submit"><span class="button__text">Go</span></button></td>
+                </tr>
+              </table>
+            </form>
+        </div>
+        <button class="remove-btn">×</button>
+      </div>
+      
+      <!-- Weather Block -->
+      <div class="bento-block size-1x1" data-type="weather">
+        <h3>Weather</h3>
+        <div>22°C Sunny</div>
+        <button class="remove-btn">×</button>
+      </div>
+      
+      <!-- Map Block -->
+      <div class="bento-block size-2x2" data-type="map">
+        <h3>Map</h3>
+        <div>Region suggestions: Taxi, Metro, Roads</div>
+        <button class="remove-btn">×</button>
+      </div>
+      
+      <!-- Suggestions Block -->
+      <div class="bento-block size-2x1" data-type="suggestions">
+        <h3>Suggestions</h3>
+        <div>Content based on your interests</div>
+        <button class="remove-btn">×</button>
+      </div>
+      
+      <!-- TV Programme Block -->
+      <div class="bento-block size-2x2" data-type="tv">
+        <h3>TV Guide</h3>
+        <div>Tonight's programme schedule</div>
+        <button class="remove-btn">×</button>
+      </div>
+      
+      <!-- Services Block -->
+      <div class="bento-block size-1x2" data-type="services">
+        <h3>Services</h3>
+        <div>Banking, Healthcare, Transport</div>
+        <button class="remove-btn">×</button>
+      </div>
+      
+      <!-- Stocks Block -->
+      <div class="bento-block size-2x1" data-type="stocks">
+        <h3>Stocks</h3>
+        <div>AAPL: +1.2%, MSFT: +0.8%, GOOGL: -0.5%</div>
+        <button class="remove-btn">×</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="overlay" id="overlay"></div>
+  
+  <div class="add-block-menu" id="add-block-menu">
+    <h3>Add New Block</h3>
+    <div class="block-options">
+      <div class="block-option" data-type="news" data-size="size-3x2">News (3x2)</div>
+      <div class="block-option" data-type="suggestions" data-size="size-2x1">Suggestions (2x1)</div>
+      <div class="block-option" data-type="search" data-size="size-2x1">Search (2x1)</div>
+      <div class="block-option" data-type="logo" data-size="size-1x1">Logo (1x1)</div>
+      <div class="block-option" data-type="map" data-size="size-2x2">Map (2x2)</div>
+      <div class="block-option" data-type="weather" data-size="size-1x1">Weather (1x1)</div>
+      <div class="block-option" data-type="tv" data-size="size-2x2">TV Guide (2x2)</div>
+      <div class="block-option" data-type="services" data-size="size-1x2">Services (1x2)</div>
+      <div class="block-option" data-type="stocks" data-size="size-2x1">Stocks (2x1)</div>
+    </div>
+  </div>
+
+  <script src="js/bento-widgets.js"></script>
+</body>
+</html>
