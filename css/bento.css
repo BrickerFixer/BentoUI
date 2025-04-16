@@ -64,14 +64,15 @@ body {
 }
 
 /* Block sizes (spanning grid columns and rows) */
-.size-1x1 { grid-column: span 3; grid-row: span 1; }
-.size-2x1 { grid-column: span 6; grid-row: span 1; }
-.size-3x1 { grid-column: span 9; grid-row: span 1; }
-.size-4x1 { grid-column: span 12; grid-row: span 1; }
-.size-1x2 { grid-column: span 3; grid-row: span 2; }
-.size-2x2 { grid-column: span 6; grid-row: span 2; }
-.size-3x2 { grid-column: span 9; grid-row: span 2; }
-.size-4x2 { grid-column: span 12; grid-row: span 2; }
+.size-3x1 { grid-column: span 3; grid-row: span 1; }
+.size-6x1 { grid-column: span 6; grid-row: span 1; }
+.size-9x1 { grid-column: span 9; grid-row: span 1; }
+.size-12x1 { grid-column: span 12; grid-row: span 1; }
+.size-3x2 { grid-column: span 3; grid-row: span 2; }
+.size-4x2 { grid-column: span 4; grid-row: span 2; }
+.size-6x2 { grid-column: span 6; grid-row: span 2; }
+.size-9x2 { grid-column: span 9; grid-row: span 2; }
+.size-12x2 { grid-column: span 12; grid-row: span 2; }
 
 /* Add block menu */
 .add-block-menu {
@@ -711,4 +712,118 @@ body .b-head-tabs__link {
 .b-head-tabs__info_loading_no {
     visibility: hidden;
     display: none
+}
+
+/* Customization panel styles */
+.customization-panel {
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+
+.customization-panel.expanded {
+    max-height: 300px;
+    opacity: 1;
+    padding: 20px 0;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.option-group {
+    flex: 1;
+}
+
+.option-group h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+}
+
+.theme-btn, .bg-btn, .more-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 8px 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-btn:hover, .bg-btn:hover, .more-btn:hover {
+    background: #f5f5f5;
+    border-color: #ccc;
+}
+
+.theme-btn.active, .bg-btn.active {
+    background: #92BAC2;
+    border-color: #92BAC2;
+    color: white;
+}
+
+.plugin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.plugin-list label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.plugin-list input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+/* Adjust services button appearance when panel is expanded */
+.header__action_type_srv.active .header__action-i {
+    opacity: 1;
+    background-color: #f5f5f5;
+}
+
+/* Background container styles */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bg-image, .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.bg-options {
+    margin-top: 10px;
+}
+
+.bg-options input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+body[data-bg="image"] .bg-image,
+body[data-bg="video"] .bg-video {
+    display: block;
 }

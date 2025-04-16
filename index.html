@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="css/bento.css">
 </head>
 <body class="b-page b-page-layout__rows b-page_theme_head_light b-page_theme_content_light b-page_noskin css3-transition-off">
+  <div class="background-container">
+    <div class="bg-image"></div>
+    <video class="bg-video" loop muted playsinline></video>
+  </div>
   <div class="layout header header_table_close">
     <div class="b-line b-line_header">
         <div class="header__main">
@@ -21,7 +25,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Update header__nav: assign wrnch popup -->
             <div class="layout__col layout__col_size_5 header__nav">
               <div class="controls header__action-extended">
                 <button id="edit-toggle">Edit Layout</button>
@@ -37,19 +40,64 @@
         </div>
     </div>
 </div>
-  <!-- Github webhook test -->
+
+<div class="customization-panel" style="display: none;">
+    <div class="b-line">
+        <div class="options-container">
+            <div class="option-group">
+                <h3>Themes</h3>
+                <button class="theme-btn" data-theme="light">Light</button>
+                <button class="theme-btn" data-theme="dark">Dark</button>
+                <button class="theme-btn" data-theme="colorful">Colorful</button>
+            </div>
+            <div class="option-group">
+                <h3>Background</h3>
+                <button class="bg-btn" data-bg="none">None</button>
+                <button class="bg-btn" data-bg="gradient">Gradient</button>
+                <button class="bg-btn" data-bg="pattern">Pattern</button>
+                <button class="bg-btn" data-bg="image">Image</button>
+                <button class="bg-btn" data-bg="video">Video</button>
+                <div class="bg-options" style="display: none;">
+                    <input type="url" id="bg-url" placeholder="Enter URL for image/video">
+                    <button id="apply-bg">Apply</button>
+                </div>
+            </div>
+            <div class="option-group">
+                <h3>Plugins</h3>
+                <div class="plugin-list">
+                    <label><input type="checkbox" value="weather"> Weather Widget</label>
+                    <label><input type="checkbox" value="stocks"> Stock Tracker</label>
+                    <label><input type="checkbox" value="news"> News Feed</label>
+                </div>
+            </div>
+            <div class="option-group">
+                <h3>More</h3>
+                <button class="more-btn">Layout Settings</button>
+                <button class="more-btn">Display Options</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Github webhook test -->
 
   <div class="b-line">
     <div class="bento-container">
       <!-- News Block -->
-      <div class="bento-block size-3x2" data-type="news">
+      <div class="bento-block size-6x2" data-type="news">
         <h3>News</h3>
         <div>Latest news content here</div>
         <button class="remove-btn">×</button>
       </div>
+      <!-- Suggestions Block -->
+      <div class="bento-block size-6x2" data-type="suggestions">
+        <h3>Suggestions</h3>
+        <div>Content based on your interests</div>
+        <button class="remove-btn">×</button>
+      </div>
       
       <!-- Logo Block -->
-      <div class="bento-block size-1x1" data-type="logo">
+      <div class="bento-block size-3x1" data-type="logo">
         <div class="b-logo">
               <div class="b-logo__image_bg"></div>
         </div>
@@ -57,7 +105,7 @@
       </div>
       
       <!-- Search Block -->
-      <div class="bento-block size-2x1" data-type="search">
+      <div class="bento-block size-9x1" data-type="search">
         <div class="arrow">
             <form class="search suggest2-form suggest2-counter search_suggest_yes i-bem"><input type="hidden" name="lr" value="90" />
               <table class="search__table suggest2-form__node">
@@ -71,44 +119,36 @@
         </div>
         <button class="remove-btn">×</button>
       </div>
-      
-      <!-- Weather Block -->
-      <div class="bento-block size-1x1" data-type="weather">
-        <h3>Weather</h3>
-        <div>22°C Sunny</div>
-        <button class="remove-btn">×</button>
-      </div>
-      
       <!-- Map Block -->
-      <div class="bento-block size-2x2" data-type="map">
+      <div class="bento-block size-4x2" data-type="map">
         <h3>Map</h3>
         <div>Region suggestions: Taxi, Metro, Roads</div>
         <button class="remove-btn">×</button>
       </div>
       
-      <!-- Suggestions Block -->
-      <div class="bento-block size-2x1" data-type="suggestions">
-        <h3>Suggestions</h3>
-        <div>Content based on your interests</div>
+      <!-- Weather Block -->
+      <div class="bento-block size-4x2" data-type="weather">
+        <h3>Weather</h3>
+        <div>22°C Sunny</div>
         <button class="remove-btn">×</button>
       </div>
       
       <!-- TV Programme Block -->
-      <div class="bento-block size-2x2" data-type="tv">
+      <div class="bento-block size-4x2" data-type="tv">
         <h3>TV Guide</h3>
         <div>Tonight's programme schedule</div>
         <button class="remove-btn">×</button>
       </div>
       
       <!-- Services Block -->
-      <div class="bento-block size-1x2" data-type="services">
+      <div class="bento-block size-6x2" data-type="services">
         <h3>Services</h3>
         <div>Banking, Healthcare, Transport</div>
         <button class="remove-btn">×</button>
       </div>
       
       <!-- Stocks Block -->
-      <div class="bento-block size-2x1" data-type="stocks">
+      <div class="bento-block size-6x2" data-type="stocks">
         <h3>Stocks</h3>
         <div>AAPL: +1.2%, MSFT: +0.8%, GOOGL: -0.5%</div>
         <button class="remove-btn">×</button>
@@ -122,14 +162,14 @@
     <h3>Add New Block</h3>
     <div class="block-options">
       <div class="block-option" data-type="news" data-size="size-3x2">News (3x2)</div>
-      <div class="block-option" data-type="suggestions" data-size="size-2x1">Suggestions (2x1)</div>
-      <div class="block-option" data-type="search" data-size="size-2x1">Search (2x1)</div>
-      <div class="block-option" data-type="logo" data-size="size-1x1">Logo (1x1)</div>
-      <div class="block-option" data-type="map" data-size="size-2x2">Map (2x2)</div>
-      <div class="block-option" data-type="weather" data-size="size-1x1">Weather (1x1)</div>
-      <div class="block-option" data-type="tv" data-size="size-2x2">TV Guide (2x2)</div>
+      <div class="block-option" data-type="suggestions" data-size="size-6x1">Suggestions (6x1)</div>
+      <div class="block-option" data-type="search" data-size="size-6x1">Search (6x1)</div>
+      <div class="block-option" data-type="logo" data-size="size-3x1">Logo (3x1)</div>
+      <div class="block-option" data-type="map" data-size="size-6x2">Map (6x2)</div>
+      <div class="block-option" data-type="weather" data-size="size-3x1">Weather (3x1)</div>
+      <div class="block-option" data-type="tv" data-size="size-6x2">TV Guide (6x2)</div>
       <div class="block-option" data-type="services" data-size="size-1x2">Services (1x2)</div>
-      <div class="block-option" data-type="stocks" data-size="size-2x1">Stocks (2x1)</div>
+      <div class="block-option" data-type="stocks" data-size="size-6x1">Stocks (6x1)</div>
     </div>
   </div>
 
