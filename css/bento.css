@@ -24,7 +24,12 @@ body {
 .bento-block {
   padding: 10px;
   position: relative;
-  background-color: #f9f9f9;
+}
+
+.bento-center{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 /* Base edit mode styles */
@@ -64,9 +69,12 @@ body {
 }
 
 /* Block sizes (spanning grid columns and rows) */
+.size-1x1 { grid-column: span 1; grid-row: span 1; }
+.size-2x1 { grid-column: span 2; grid-row: span 1; }
 .size-3x1 { grid-column: span 3; grid-row: span 1; }
 .size-6x1 { grid-column: span 6; grid-row: span 1; }
 .size-9x1 { grid-column: span 9; grid-row: span 1; }
+.size-10x1 { grid-column: span 10; grid-row: span 1; }
 .size-12x1 { grid-column: span 12; grid-row: span 1; }
 .size-3x2 { grid-column: span 3; grid-row: span 2; }
 .size-4x2 { grid-column: span 4; grid-row: span 2; }
