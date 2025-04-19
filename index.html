@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="css/uikit/kit.css">
   <link rel="stylesheet" href="css/uikit/suggest2.css">
   <link rel="stylesheet" href="css/bento.css">
+  <link rel="stylesheet" href="css/uikit/bento/suggestions.css">
+  <link rel="stylesheet" href="css/uikit/bento/geo.css">
+  <link rel="stylesheet" href="css/uikit/bento/weather.css">
 </head>
 <body class="b-page b-page-layout__rows b-page_theme_head_light b-page_theme_content_light b-page_noskin css3-transition-off">
   <div class="background-container">
@@ -17,69 +20,74 @@
   </div>
   <div class="layout header header_table_close">
     <div class="b-line b-line_header">
-        <div class="header__main">
-            <div class="layout__col">
-                <div class="personal">
-                    <div class="personal__item ">
-                        <img src="css/placeholder-logo.png" class="personal__item-icon personal__item-icon_height_56"/>
-                    </div>
-                </div>
+      <div class="header__main">
+        <!-- Left side (logo) -->
+        <div class="layout__col">
+          <div class="personal">
+            <div class="personal__item">
+              <img
+                src="css/placeholder-logo.png"
+                class="personal__item-icon personal__item-icon_height_56"
+              />
             </div>
-            <div class="layout__col layout__col_size_5 header__nav">
-              <div class="controls header__action-extended">
-                <button id="edit-toggle">Edit Layout</button>
-                <button id="add-block" style="display: none;">Add Block</button>
-              </div>
-                <a class="header__action header__action_type_wrch i-bem" onclick="return {'header__action':{'releaseByDocumentScroll':false}}">
-                  <i class="header__action-i"></i>
-                </a>
-                <a class="header__action header__action_type_srv header__action_behaviour_shy i-bem" onclick="return {'header__action':{}}">
-                    <i class="header__action-i"></i>
-                </a>
-            </div>
+          </div>
         </div>
+  
+        <!-- Right side (nav + controls) -->
+        <div class="layout__col layout__col_size_5 header__nav">
+          
+          <a
+            class="header__action header__action_type_wrch i-bem"
+            onclick="return {'header__action':{'releaseByDocumentScroll':false}}"
+          >
+            <i class="header__action-i"></i>
+          </a>
+          <a
+            class="header__action header__action_type_srv header__action_behaviour_shy i-bem"
+            onclick="return {'header__action':{}}"
+          >
+            <i class="header__action-i"></i>
+          </a>
+        </div>
+      </div>
     </div>
-</div>
-
-<div class="customization-panel" style="display: none;">
-    <div class="b-line">
+  
+    <div class="customization-panel" style="display: none;">
+      <div class="b-line">
         <div class="options-container">
-            <div class="option-group">
-                <h3>Themes</h3>
-                <button class="theme-btn" data-theme="light">Light</button>
-                <button class="theme-btn" data-theme="dark">Dark</button>
-                <button class="theme-btn" data-theme="colorful">Colorful</button>
+          <div class="option-group">
+            <h3>Themes</h3>
+            <button class="theme-btn" data-theme="light">Light</button>
+            <button class="theme-btn" data-theme="dark">Dark</button>
+            <button class="theme-btn" data-theme="colorful">Colorful</button>
+          </div>
+          <div class="option-group">
+            <h3>Background</h3>
+            <button class="bg-btn" data-bg="none">None</button>
+            <button class="bg-btn" data-bg="gradient">Gradient</button>
+            <button class="bg-btn" data-bg="pattern">Pattern</button>
+            <button class="bg-btn" data-bg="image">Image</button>
+            <button class="bg-btn" data-bg="video">Video</button>
+            <div class="bg-options" style="display: none;">
+              <input type="url" id="bg-url" placeholder="Enter URL for image/video" />
+              <button id="apply-bg">Apply</button>
             </div>
-            <div class="option-group">
-                <h3>Background</h3>
-                <button class="bg-btn" data-bg="none">None</button>
-                <button class="bg-btn" data-bg="gradient">Gradient</button>
-                <button class="bg-btn" data-bg="pattern">Pattern</button>
-                <button class="bg-btn" data-bg="image">Image</button>
-                <button class="bg-btn" data-bg="video">Video</button>
-                <div class="bg-options" style="display: none;">
-                    <input type="url" id="bg-url" placeholder="Enter URL for image/video">
-                    <button id="apply-bg">Apply</button>
-                </div>
+          </div>
+          <div class="option-group">
+            <h3>More</h3>
+            <div class="controls header__action-extended">
+              <button id="edit-toggle">Edit Layout</button>
+              <button id="add-block" style="display: none;">Add Block</button>
             </div>
-            <div class="option-group">
-                <h3>Plugins</h3>
-                <div class="plugin-list">
-                    <label><input type="checkbox" value="weather"> Weather Widget</label>
-                    <label><input type="checkbox" value="stocks"> Stock Tracker</label>
-                    <label><input type="checkbox" value="news"> News Feed</label>
-                </div>
-            </div>
-            <div class="option-group">
-                <h3>More</h3>
-                <button class="more-btn">Layout Settings</button>
-                <button class="more-btn">Display Options</button>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<!-- Github webhook test -->
+  
+
+  <!-- Github webhook test -->
 
   <div class="b-line">
     <div class="bento-container">
@@ -91,8 +99,19 @@
       </div>
       <!-- Suggestions Block -->
       <div class="bento-block size-6x2" data-type="suggestions">
-        <h3>Suggestions</h3>
-        <div>Content based on your interests</div>
+        <div class="b-wrapper b-wrapper-teaser">
+          <div class="b-promo">
+            <img src="/resources/service-icons/mini-transport.png" alt="Transport" height="90" />
+            <h2 class="b-promo__title">
+                <a href="https://github.com/brickerfixer/bentoui/">
+                    <span class="b-promo__nowrap">Know when your bus arrives</span>
+                </a>
+            </h2>
+            <div class="b-promo__description">
+                <span class="b-promo__nowrap">So you don't skip it. Use Index Transport!</span>
+            </div>
+          </div>
+      </div>
         <button class="remove-btn">×</button>
       </div>
       
@@ -107,7 +126,7 @@
       <!-- Search Block -->
       <div class="bento-block bento-center size-10x1" data-type="search">
         <div class="arrow">
-            <form class="search suggest2-form suggest2-counter search_suggest_yes i-bem"><input type="hidden" name="lr" value="90" />
+            <form class="search suggest2-form suggest2-counter search_suggest_yes i-bem"><input type="hidden" name="lr" value="90"/>
               <table class="search__table suggest2-form__node">
                 <tr class="search__row">
                   <td class="search__cell search__input"><span class="input suggest2-form__input input_size_m input_theme_normal input_ahead_yes input_keyboard_yes i-bem" onclick="return {'input':{'ajaxKey':'search__input','autoFocus':true}}"><span class="input__box"><input class="input__control input__input" tabindex="1" autocomplete="yes" id="text" maxlength="400" name="text" />
@@ -121,15 +140,34 @@
       </div>
       <!-- Map Block -->
       <div class="bento-block size-4x2" data-type="map">
-        <h3>Map</h3>
-        <div>Region suggestions: Taxi, Metro, Roads</div>
+        <div class="b-wrapper b-wrapper-geo">
+          <div class="b-region b-region_map b-region_map-on-links">
+              <div class="">
+                  <div class="b-content-item__title b-region__title b-region_city"><span class="b-region__cityname"><span class="b-region__cityname_text">Moscow</span><a class="b-inline b-region__setup b-region__setup_icon" href="#"
+                          title="Изменить город"><i class="b-ico b-ico-setup_g"></i><i class="b-ico b-ico-setup_b b-icon_color"></i></a></span>
+                  </div>
+                  <div class="b-region__map"><a href="#" class="b-link">Map of Moscow (My Town functionality soon!)</a></div>
+              </div>
+              <div class="b-region__links">
+                  <div class="b-region__links__item b-region__links__item_0 b-inline"><a class="b-link" href="#">Panoramas of Russia</a></div>
+              </div>
+          </div>
+      </div>
         <button class="remove-btn">×</button>
       </div>
       
       <!-- Weather Block -->
       <div class="bento-block size-4x2" data-type="weather">
-        <h3>Weather</h3>
-        <div>22°C Sunny</div>
+        <div class="b-weather">
+          <div class="b-content-item__title">
+            <a href="#" class="b-link">Weather</a>
+            <a href="#" title="облачно" class="b-weather__icon_link">
+              <i class="b-inline b-weather__icon b-weather__icon_ovc"></i>
+            </a>
+            <a href="#" class="b-link_black_novisit">+16 °C</a>
+          </div>
+          <div class="b-weather__info"><a href="#" class="b-link_black_novisit">+21&nbsp;this day</a>,&#32;&nbsp;<a href="#" class="b-link_black_novisit">+17&nbsp;this evening</a></div>
+        </div>
         <button class="remove-btn">×</button>
       </div>
       
@@ -173,6 +211,6 @@
     </div>
   </div>
 
-  <script src="js/bento-widgets.js"></script>
+  <script src="client/js/bento-widgets.js"></script>
 </body>
 </html>

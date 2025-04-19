@@ -24,6 +24,8 @@ body {
 .bento-block {
   padding: 10px;
   position: relative;
+  background-color: #f5f5f5d0;
+  backdrop-filter: blur(10px);
 }
 
 .bento-center{
@@ -535,143 +537,6 @@ body .b-head-tabs__link {
     background-image: url(//web.archive.org/web/20140702175240im_/http://clck.yandex.ru/click/dtype=stred/pid=132/cid=71945/path=tabsPopup.tab3/\*)
 }
 
-@media screen and (min-width:1042px) {
-
-    html[lang="ru"] .b-head-tabs .i-adaptive__2,
-    html[lang="by"] .b-head-tabs .i-adaptive__2,
-    html[lang="ua"] .b-head-tabs .i-adaptive__2 {
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: top
-    }
-    
-    html.m-stat[lang="ru"] .b-head-tabs .i-adaptive__2,
-    html.m-stat[lang="by"] .b-head-tabs .i-adaptive__2,
-    html.m-stat[lang="ua"] .b-head-tabs .i-adaptive__2 {
-        background-image: url(//web.archive.org/web/20140702175240im_/http://clck.yandex.ru/click/dtype=stred/pid=132/cid=71945/path=tabs.tab2/\*)
-    }
-    
-    html[lang="ru"] .b-services-more .i-adaptive__2,
-    html[lang="by"] .b-services-more .i-adaptive__2,
-    html[lang="ua"] .b-services-more .i-adaptive__2 {
-        display: none
-    }
-    
-    html.m-stat[lang="ru"] .b-page .b-services-more .i-adaptive__2,
-    html.m-stat[lang="by"] .b-page .b-services-more .i-adaptive__2,
-    html.m-stat[lang="ua"] .b-page .b-services-more .i-adaptive__2 {
-        background-image: none
-    }
-}
-
-@media screen and (min-width:1108px) {
-
-    html[lang="ru"] .b-head-tabs .i-adaptive__3,
-    html[lang="by"] .b-head-tabs .i-adaptive__3,
-    html[lang="ua"] .b-head-tabs .i-adaptive__3 {
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: top
-    }
-    
-    html.m-stat[lang="ru"] .b-head-tabs .i-adaptive__3,
-    html.m-stat[lang="by"] .b-head-tabs .i-adaptive__3,
-    html.m-stat[lang="ua"] .b-head-tabs .i-adaptive__3 {
-        background-image: url(//web.archive.org/web/20140702175240im_/http://clck.yandex.ru/click/dtype=stred/pid=132/cid=71945/path=tabs.tab3/\*)
-    }
-    
-    html[lang="ru"] .b-services-more .i-adaptive__3,
-    html[lang="by"] .b-services-more .i-adaptive__3,
-    html[lang="ua"] .b-services-more .i-adaptive__3 {
-        display: none
-    }
-    
-    html.m-stat[lang="ru"] .b-page .b-services-more .i-adaptive__3,
-    html.m-stat[lang="by"] .b-page .b-services-more .i-adaptive__3,
-    html.m-stat[lang="ua"] .b-page .b-services-more .i-adaptive__3 {
-        background-image: none
-    }
-}
-
-@media screen and (min-width:1125px) {
-    html[lang="tt"] .b-head-tabs .i-adaptive__2 {
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: top
-    }
-    
-    html.m-stat[lang="tt"] .b-head-tabs .i-adaptive__2 {
-        background-image: url(//web.archive.org/web/20140702175240im_/http://clck.yandex.ru/click/dtype=stred/pid=132/cid=71945/path=tabs.tab2/\*)
-    }
-    
-    html[lang="tt"] .b-services-more .i-adaptive__2 {
-        display: none
-    }
-    
-    html.m-stat[lang="tt"] .b-page .b-services-more .i-adaptive__2 {
-        background-image: none
-    }
-}
-
-@media screen and (min-width:1250px) {
-    html[lang="kz"] .b-head-tabs .i-adaptive__2 {
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: top
-    }
-    
-    html.m-stat[lang="kz"] .b-head-tabs .i-adaptive__2 {
-        background-image: url(//web.archive.org/web/20140702175240im_/http://clck.yandex.ru/click/dtype=stred/pid=132/cid=71945/path=tabs.tab2/\*)
-    }
-    
-    html[lang="kz"] .b-services-more .i-adaptive__2 {
-        display: none
-    }
-    
-    html.m-stat[lang="kz"] .b-page .b-services-more .i-adaptive__2 {
-        background-image: none
-    }
-}
-
-@media screen and (max-width:1050px) {
-
-    html[lang="kz"] .b-head-tabs,
-    html[lang="tt"] .b-head-tabs {
-        font-size: 95%
-    }
-    
-    html[lang="kz"] .b-head-tabs__tab,
-    html[lang="tt"] .b-head-tabs__tab {
-        margin-right: 10px
-    }
-}
-
-@media screen and (max-width:950px) {
-    .b-head-tabs__tab_selected {
-        display: none
-    }
-}
-
-@media screen and (max-width:780px) {
-    .b-head-tabs .i-adaptive__1 {
-        display: none
-    }
-    
-    .b-services-more .i-adaptive__1 {
-        display: block
-    }
-}
-
-@media screen and (min-width:781px) {
-    .m-stat .b-page .b-services-more .i-adaptive__1 {
-        background-image: none
-    }
-    
-    .m-stat .b-head-tabs .i-adaptive__1 {
-        background-image: url(//web.archive.org/web/20140702175240im_/http://clck.yandex.ru/click/dtype=stred/pid=132/cid=71945/path=tabs.tab1/\*)
-    }
-}
-
 .b-dropdowna__menu .b-head-tabs__tab-link:link,
 .b-dropdowna__menu .b-head-tabs__tab-link:visited,
 .b-head-tabs .b-dropdown__link {
@@ -830,8 +695,20 @@ body .b-head-tabs__link {
     padding: 5px;
     margin-bottom: 5px;
 }
-
+.bg-image{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 body[data-bg="image"] .bg-image,
 body[data-bg="video"] .bg-video {
     display: block;
 }
+
+/* Make the header a flex‐container */
+.layout.header .header__main {
+    display: flex;
+    justify-content: space-between; /* logo left, nav right */
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+  
